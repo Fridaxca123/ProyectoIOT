@@ -1,3 +1,9 @@
+.carouselContainer {
+    width: 80%;
+    margin: 20px auto;
+    position: relative;
+}
+
 body {
     background-color: #FFF8E8;
     font-family: 'Hammersmith One', sans-serif;
@@ -36,9 +42,6 @@ body {
 .carousel {
     display: flex;
     overflow: hidden;
-    width: 80%;
-    margin: 20px auto;
-    position: relative;
 }
 
 .productos {
@@ -79,4 +82,5 @@ button.prev {
 button.next {
     right: 0;
 }
+
 

@@ -1,6 +1,6 @@
 body {
     background-color: #FFF8E8;
-    font-family: Arial, sans-serif;
+    font-family: 'Hammersmith One', sans-serif;
     margin: 0;
     padding: 0;
 }
@@ -10,17 +10,36 @@ body {
     margin: 20px;
 }
 
-.title h1 {
+.title {
+    background-color: #A79277;
+    color: white;
+    padding: 20px;
+    border-radius: 15px;
     font-size: 2em;
-    color: #333;
+    margin: 20px auto;
+    width: 80%;
 }
 
-.weatherInfo h2,
-.mousturizerInfo h2 {
-    color: #555;
-    font-size: 1.5em;
+.weatherInfo, .productos {
+    background-color: #FFF2E1
+    border: 2px solid #e0c8a7;
+    border-radius: 15px;
+    padding: 15px;
+    width: 80%;
+    margin: 20px auto;
+    color: #7d5f4c;
 }
 
-.mousturizerInfo p {
-    color: #777;
+.weatherInfo h2, .mousturizerInfo h2, .mousturizerInfo p {
+    background-color: #EAD8C0; 
+    margin: 5px;
+    font-size: 1.2em;
+    font-weight: normal;
+}
+
+.mousturizerImage img {
+    width: 100px;
+    height: auto;
+    border-radius: 10px;
+    margin-top: 10px;
 }

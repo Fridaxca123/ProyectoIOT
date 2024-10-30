@@ -1,0 +1,26 @@
+body {
+    background-color: #FFF8E8;
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+}
+
+.parentContainer {
+    text-align: center;
+    margin: 20px;
+}
+
+.title h1 {
+    font-size: 2em;
+    color: #333;
+}
+
+.weatherInfo h2,
+.mousturizerInfo h2 {
+    color: #555;
+    font-size: 1.5em;
+}
+
+.mousturizerInfo p {
+    color: #777;
+}

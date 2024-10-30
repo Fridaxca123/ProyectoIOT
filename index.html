@@ -3,8 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link href="https://fonts.googleapis.com/css2?family=Hammersmith+One&display=swap" rel="stylesheet">
     <title>ProyectoIOT</title>
+    <link href="https://fonts.googleapis.com/css2?family=Hammersmith+One&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="main.css">
 </head>
 <body>
@@ -12,20 +12,32 @@
         <div class="title">
             <h1>Skin</h1>
         </div>
+        
+        <!-- Información del clima en un solo cuadrante -->
         <div class="weatherInfo">
-            <h2>Temperatura: 36 Celsius</h2>
-            <h2>Humedad: 64% (Low)</h2>
+            <h2>Temperatura: 17°C</h2>
+            <h2>Humedad: 64% (low)</h2>
             <h2>UV index: 3</h2>
         </div>
-        <div class="productos">
-            <div class="mousturizerInfo">
-                <h2>Aveeno Moisturizer:</h2>
-                <p>All skin types</p>
-            </div>
-            <div class="mousturizerImage">
-                <!-- Puedes añadir una imagen aquí -->
+        
+        <!-- Carrusel de productos -->
+        <div class="carousel">
+            <div class="productos">
+                <div class="mousturizerImage">
+                    <img src="aveeno.jpg" alt="Aveeno Moisturizer Image">
+                </div>
+                <div class="mousturizerInfo">
+                    <h2>Aveeno Moisturizer.</h2>
+                    <p>Sensitive skin type, specialize in dry skin types.</p>
+                </div>
             </div>
         </div>
+
+        <!-- Controles del carrusel -->
+        <button class="prev" onclick="prevSlide()">◀</button>
+        <button class="next" onclick="nextSlide()">▶</button>
     </div>
+
+    <script src="main.js"></script>
 </body>
 </html>

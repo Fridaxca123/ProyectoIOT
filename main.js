@@ -1,9 +1,8 @@
 let currentSlide = 0;
 
 function showSlide(index) {
-    const carousel = document.querySelector('.carousel');
-    const slides = document.querySelectorAll('.productos');
-    const totalSlides = slides.length;
+    const carousel = document.querySelector('.productos');
+    const totalSlides = Math.ceil(carousel.children.length / 2); // Dividir en grupos de dos productos
 
     // Ajustar el índice del slide
     if (index >= totalSlides) currentSlide = 0;

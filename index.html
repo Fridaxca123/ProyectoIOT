@@ -4,13 +4,23 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>ProyectoIOT</title>
-    <link href="https://fonts.googleapis.com/css2?family=Hammersmith+One&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@200..700&family=PT+Serif:ital,wght@0,400;0,700;1,400;1,700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="main.css">
 </head>
 <body>
     <div class="parentContainer">
         <div class="title">
-            <h1>Skin</h1>
+            <h1>SkinSense</h1>
+        </div>
+
+        <div> 
+            <ul class="menu">
+                <li><a href="index.html" style="text-decoration: underline;">Home</a></li>
+                <li><a href="info.html" style="text-decoration: underline;">Info</a></li>
+                <li><a href="products.html" style="text-decoration: underline;">Products</a></li>
+            </ul>
         </div>
         
         <!-- Información del clima en un solo cuadrante -->
@@ -20,27 +30,38 @@
             <h2>UV index: 3</h2>
         </div>
         
-        <!-- Contenedor del carrusel -->
         <div class="carouselContainer">
             <div class="carousel">
                 <div class="productos">
-                    <div class="mousturizerImage">
-                        <img src="aveeno.jpg" alt="Aveeno Moisturizer Image">
+                    <!-- Primer producto -->
+                    <div class="producto">
+                        <div class="imageContainer">
+                            <img src="aveeno.jpg" alt="Aveeno Moisturizer Image">
+                        </div>
+                        <div class="infoContainer">
+                            <h2>Aveeno Moisturizer</h2>
+                            <p>Sensitive skin type, specializes in dry skin types.</p>
+                        </div>
                     </div>
-                    <div class="mousturizerInfo">
-                        <h2>Aveeno Moisturizer.</h2>
-                        <p>Sensitive skin type, specialize in dry skin types.</p>
+                    <!-- Segundo producto -->
+                    <div class="producto">
+                        <div class="imageContainer">
+                            <img src="la-roche.jpg" alt="La Roche-Posay Image">
+                        </div>
+                        <div class="infoContainer">
+                            <h2>La Roche-Posay</h2>
+                            <p>Sensitive skin type, specializes in dry skin types.</p>
+                        </div>
                     </div>
                 </div>
             </div>
-
+        
             <!-- Controles del carrusel -->
             <button class="prev" onclick="prevSlide()">◀</button>
             <button class="next" onclick="nextSlide()">▶</button>
-        </div>
+        </div> 
     </div>
 
     <script src="main.js"></script>
 </body>
 </html>
-

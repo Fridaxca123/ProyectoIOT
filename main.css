@@ -1,3 +1,4 @@
+
 .carouselContainer {
     width: 80%;
     margin: 20px auto;
@@ -5,8 +6,11 @@
 }
 
 body {
-    background: radial-gradient(circle,  #faf0fe 5%, #e6f7ff 15%, #FFFAFA 85%);
-    font-family: 'Hammersmith One', sans-serif;
+    background: #FFFAFA ;
+    font-family: "PT Serif", serif;
+    font-weight: 700;
+    font-optical-sizing: auto;
+    font-style: normal;
     margin: 0;
     padding: 0;
     height: 100vh;
@@ -18,20 +22,24 @@ body {
 }
 
 .title {
-    color: #7d5f4c;
-    padding: 20px;
-    border: 2px solid #e0c8a7;
-    border-radius: 15px;
-    font-size: 2em;
-    margin: 20px auto;
-    width: 80%;
+    font-size: 1em;
+    margin: 10px auto;
+}
+
+.menu {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    list-style: none;
+    padding: 0px;
+    margin: 50px 0px;
+    font-size: 1em;
 }
 
 .weatherInfo {
     border: 2px solid #e0c8a7;
     border-radius: 15px;
     padding: 15px;
-    color: #7d5f4c;
     display: grid;
     grid-template-rows: repeat(3, auto);
     gap: 0;
@@ -39,26 +47,44 @@ body {
     width: 80%;
 }
 
+.carouselContainer {
+    width: 80%;
+    margin: 20px auto;
+    position: relative;
+}
+
 .carousel {
     display: flex;
     overflow: hidden;
+    width: 100%;
 }
 
 .productos {
     display: flex;
-    flex: 1;
     transition: transform 0.5s ease;
 }
 
-.mousturizerImage, .mousturizerInfo {
-    flex: 1;
-    border: 2px solid #e0c8a7;
-    border-radius: 15px;
-    padding: 15px;
-    margin: 0 5px;
+.producto {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    width: 50%; /* Cada producto ocupa el 50% del carrusel */
+    box-sizing: border-box;
 }
 
-.mousturizerImage img {
+.imageContainer, .infoContainer {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 15px;
+    border: 2px solid #e0c8a7;
+    border-radius: 15px;
+    margin: 10px 5px;
+    box-sizing: border-box;
+    width: 100%; /* Abarca el 100% del contenedor del producto */
+}
+
+.imageContainer img {
     width: 100%;
     border-radius: 10px;
 }
@@ -82,3 +108,13 @@ button.next {
 }
 
 
+.InfoSkincare {
+    border: 2px solid #e0c8a7;
+    border-radius: 15px;
+    padding: 15px;
+    display: grid;
+    grid-template-rows: repeat(3, auto);
+    gap: 0;
+    margin: 20px auto;
+    width: 80%;
+}

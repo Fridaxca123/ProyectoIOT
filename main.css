@@ -5,7 +5,7 @@
 }
 
 body {
-    background: radial-gradient(circle, #f3e7fe 20%, #d0eaff 30%, #d3d
+    background: radial-gradient(circle, #f3e7fe 10%, #d0eaff 20%, #d3d3d3 70%);
     font-family: 'Hammersmith One', sans-serif;
     margin: 0;
     padding: 0;

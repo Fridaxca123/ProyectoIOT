@@ -5,7 +5,7 @@
 }
 
 body {
-    background: radial-gradient(circle, #e0c3fc, #8ec5fc);
+    radial-gradient(circle, #e0c3fc, #8ec5fc, #d3d3d3)
     font-family: 'Hammersmith One', sans-serif;
     margin: 0;
     padding: 0;
@@ -17,7 +17,6 @@ body {
 }
 
 .title {
-    background-color: #b39979;
     color: white;
     padding: 20px;
     border-radius: 15px;
@@ -27,7 +26,6 @@ body {
 }
 
 .weatherInfo {
-    background-color: #f9e8d4;
     border: 2px solid #e0c8a7;
     border-radius: 15px;
     padding: 15px;
@@ -52,7 +50,6 @@ body {
 
 .mousturizerImage, .mousturizerInfo {
     flex: 1;
-    background-color: #f9e8d4;
     border: 2px solid #e0c8a7;
     border-radius: 15px;
     padding: 15px;
@@ -65,7 +62,6 @@ body {
 }
 
 button.prev, button.next {
-    background-color: #b39979;
     border: none;
     color: white;
     padding: 10px;

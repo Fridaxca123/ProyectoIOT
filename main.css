@@ -5,10 +5,11 @@
 }
 
 body {
-    background: radial-gradient(circle, #e0c3fc 20%, #8ec5fc 30%, #d3d3d3 70%);
+    background: radial-gradient(circle, #f3e7fe 20%, #d0eaff 30%, #d3d
     font-family: 'Hammersmith One', sans-serif;
     margin: 0;
     padding: 0;
+    height: 100vh;
 }
 
 .parentContainer {

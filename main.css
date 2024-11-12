@@ -5,7 +5,7 @@
 }
 
 body {
-    radial-gradient(circle, #e0c3fc, #8ec5fc, #d3d3d3)
+    background: radial-gradient(circle, #e0c3fc, #8ec5fc, #d3d3d3)
     font-family: 'Hammersmith One', sans-serif;
     margin: 0;
     padding: 0;
@@ -17,8 +17,9 @@ body {
 }
 
 .title {
-    color: white;
+    color: #7d5f4c;
     padding: 20px;
+    border: 2px solid #e0c8a7;
     border-radius: 15px;
     font-size: 2em;
     margin: 20px auto;

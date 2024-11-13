@@ -203,9 +203,9 @@ h3 {
         gap: 0; /* Elimina el espacio entre los contenedores de datos y productos */
     }
     .product-pair, .data {
-        width: 100%;
+        width: 80%;
         max-width: 390px;
-        margin: 0 10px; /* Agrega un margen lateral para evitar que queden pegados a la pantalla */
+        margin:20px; /* Agrega un margen lateral para evitar que queden pegados a la pantalla */
     }
     .data-item {
         width: 100%;

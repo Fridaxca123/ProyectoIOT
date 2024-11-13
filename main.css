@@ -1,3 +1,4 @@
+/* Define el estilo de la fuente y elimina los márgenes del body */
 body {
     font-family: "PT Serif", serif;
     margin: 0;
@@ -7,6 +8,7 @@ body {
     min-height: 100vh;
 }
 
+/* Contenedor principal con gradiente de fondo y alineación centrada */
 .container {
     background: radial-gradient(circle, rgb(250, 240, 254) 5%, rgb(230, 247, 255) 15%, rgb(255, 250, 250) 85%);
     width: 100%; /* Ocupa todo el ancho de la pantalla */
@@ -17,52 +19,58 @@ body {
     flex-direction: column;
     box-sizing: border-box;
     position: relative;
-    padding: 0 20px; /* Aplica padding solo en los lados */
+    padding: 0 20px; /* Espacio en los lados */
 }
 
+/* Estilo del encabezado en la esquina superior izquierda */
 header {
     position: absolute;
     top: 10px;
-    left: 10px; /* Mueve el menú más hacia la izquierda */
+    left: 10px;
     font-size: 12px;
 }
 
+/* Icono de menú con posición y tamaño ajustado */
 .menu-icon {
     font-size: 50px;
     cursor: pointer;
     position: absolute;
     top: 10px;
-    left: 10px; /* Posicionado en la esquina izquierda */
+    left: 10px;
 }
 
+/* Posición del pie de página en la esquina inferior izquierda */
 footer {
     position: absolute;
     bottom: 10px;
-    left: 10px; /* Posicionado en la esquina izquierda */
+    left: 10px;
     display: flex;
     justify-content: space-between;
     font-size: 12px;
     color: #666;
-    width: calc(100% - 40px); /* Ocupa todo el ancho con espacio para el padding */
+    width: calc(100% - 40px);
 }
 
+/* Estilo del menú desplegable */
 nav {
     display: none;
     background-color: #fff;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
     position: absolute;
-    top: 60px; /* Ajusta el menú debajo del icono */
+    top: 60px;
     left: 10px;
     padding: 10px;
     border-radius: 8px;
     animation: fadeIn 0.3s ease;
 }
 
+/* Animación para el menú */
 @keyframes fadeIn {
     from { opacity: 0; }
     to { opacity: 1; }
 }
 
+/* Contenedor principal de los productos */
 main {
     display: flex;
     flex-direction: column;
@@ -71,22 +79,25 @@ main {
     flex: 1;
 }
 
-/* Estilo para productos */
+/* Contenedor para los productos */
 .products {
     background-color: rgb(255, 250, 250);
-    width: 100%; /* Ocupa todo el ancho de la pantalla */
-    min-height: 100vh; /* Ocupa toda la altura de la pantalla */
+    width: 100%;
+    min-height: 100vh;
     display: flex;
     flex-direction: column;
     box-sizing: border-box;
     position: relative;
-    padding: 0 20px; /* Aplica padding solo en los lados */
+    padding: 0 20px;
 }
+
+/* Estilos para imágenes específicas */
 .MousImage, .SunImager {
     display: inline-block;
     margin: 10px;
 }
 
+/* Títulos principales con texto centrado */
 h1 {
     font-size: 80px;
     font-weight: 700;
@@ -95,100 +106,123 @@ h1 {
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
 }
- 
+
 h2 {
-    font-size: 40px; /* Tamaño del texto */
+    font-size: 40px;
     font-weight: 700;
     background: black;
     text-align: center;
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
-    margin: 0 auto; /* Centra el texto horizontalmente */
+    margin: 0 auto;
     max-width: 80%;
 }
 
 p {
-    font-size: 20px; /* Tamaño del texto */
+    font-size: 20px;
     font-weight: 300;
     background: black;
     text-align: center;
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
-    margin: 0 auto; /* Centra el texto horizontalmente */
+    margin: 0 auto;
     max-width: 80%;
 }
 
-/* Asegura que las imágenes ocupen todo el ancho del contenedor y se adapten */
+/* Imágenes dentro de los contenedores de productos */
 .MousImage img, .SunImage img {
     width: 100%;
     height: auto;
-    border-radius: 10px; /* Opcional: redondea los bordes de las imágenes */
-    object-fit: contain; /* Mantiene la proporción de la imagen */
+    border-radius: 10px;
+    object-fit: contain;
 }
 
-/* Contenedor principal que alinea todo en una fila */
+/* Contenedor principal que alinea los elementos en una fila */
 .main-container {
     display: flex;
     justify-content: center;
     align-items: center;
-    width: 100vw; /* Ocupa todo el ancho de la pantalla */
-    height: 100vh; /* Ocupa toda la altura de la pantalla */
+    width: 100vw;
+    height: 100vh;
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    gap: 20px; /* Espacio entre los pares de contenedores */
+    gap: 20px;
 }
 
-/* Alinear la imagen y el texto en cada contenedor */
+/* Contenedor para cada par de productos */
 .product-pair {
     display: flex;
     align-items: center;
     justify-content: center;
-    border: 2px solid  #B3E5FF;
+    border: 2px solid #B3E5FF;
     border-radius: 15px;
     padding: 15px;
-    width: 45%; /* Cada par ocupa la mitad de la pantalla */
+    width: 45%;
     box-sizing: border-box;
-    gap: 10px; /* Espacio entre la imagen y el texto */
+    gap: 10px;
 }
 
-/* Estilos individuales para la imagen y el texto */
+/* Imagen y texto dentro de los contenedores de productos */
 .MousImage, .MousInfo, .SunImage, .SunInfo {
-    width: 50%; /* La imagen y el texto ocupan el mismo ancho dentro del contenedor */
+    width: 50%;
     text-align: center;
 }
 
-/* Ajustes para el contenedor de datos */
+/* Contenedor de datos con diseño flexible y borde */
 .data {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    border: 2px solid #A7D8FF; /* Azul claro */
+    border: 2px solid #A7D8FF;
     border-radius: 15px;
-    padding: 30px; /* Aumenta el relleno para más espacio */
-    width: 90%; /* Ancho grande pero dentro de los límites de la pantalla */
-    max-width: 800px; /* Limita el ancho máximo */
-    margin: 60px auto; /* Mayor margen superior para alejarlo del borde superior */
+    padding: 30px;
+    width: 90%;
+    max-width: 800px;
+    margin: 60px auto;
     box-sizing: border-box;
 }
 
-/* Ajustes para cada elemento de datos */
+/* Cada elemento de datos dentro del contenedor */
 .data-item {
     text-align: center;
-    width: 30%; /* Ajuste del ancho para que cada elemento ocupe más espacio */
-    font-size: 18px; /* Tamaño de fuente para mejorar la visibilidad */
+    width: 30%;
+    font-size: 18px;
 }
 
+/* Subtítulos */
 h3 {
-    font-size: 30px; /* Tamaño del texto */
+    font-size: 30px;
     font-weight: 500;
     background: black;
     text-align: center;
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
-    margin: 0 auto; /* Centra el texto horizontalmente */
+    margin: 0 auto;
     max-width: 80%;
 }
+
+/* Estilos responsivos para dispositivos móviles */
+@media (max-width: 768px) {
+    h1 {
+        font-size: 50px;
+    }
+    h2, h3 {
+        font-size: 24px;
+    }
+    .main-container {
+        flex-direction: column;
+        gap: 15px;
+    }
+    .product-pair, .data {
+        width: 90%;
+    }
+    .data-item {
+        width: 100%;
+        font-size: 16px;
+    }
+}
+
 
 
 

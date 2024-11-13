@@ -182,9 +182,9 @@ select {
     width: 50%;
     text-align: center;
 }
-/* Estilos específicos para iPhone 13 y dispositivos pequeños */
+/* Estilos específicos para dispositivos móviles */
 @media (max-width: 390px) {
-    /* Encabezados y textos */
+    /* Ajuste de encabezados y textos */
     h1 {
         font-size: 48px;
     }
@@ -199,69 +199,48 @@ select {
         max-width: 90%;
     }
 
-    /* Icono del menú */
+    /* Icono de menú */
     .menu-icon {
         font-size: 36px;
         top: 5px;
         left: 5px;
     }
 
-    /* Contenedor principal con fondo adaptado y márgenes */
+    /* Contenedor principal y espaciado */
     .container {
         padding: 10px;
         width: 100%;
     }
 
-    /* Espaciado y ajuste del contenedor principal */
-    main {
-        margin: 20px 10px;
-    }
-
-    /* Ajuste del contenedor de datos para dispositivos pequeños */
+    /* Contenedor de datos */
     .data {
         padding: 20px;
         flex-direction: column;
-        width: 100%;
-        max-width: 90%; /* Limitar ancho en dispositivos pequeños */
-        margin: 20px auto; /* Espaciado desde el borde */
+        width: 90%;
+        max-width: 90%;
+        margin: 20px auto;
         box-sizing: border-box;
     }
 
-    /* Elementos dentro de `.data` */
-    .data-item {
-        font-size: 18px;
-        width: 100%;
-        margin-bottom: 10px;
-    }
-
-    /* Selector de tipo de piel */
-    .skin-type-selector {
-        margin: 10px 0;
-        font-size: 20px;
-        padding: 0 5px;
-    }
-    label {
-        font-size: 20px;
-    }
-    select {
-        font-size: 18px;
-        padding: 8px;
-    }
-
-    /* Ajuste de los productos */
+    /* Contenedores de productos */
     .products {
         flex-direction: column;
         gap: 15px;
-        width: 100%;
-        min-height: auto;
-        margin: 10px 0;
+        width: 90%; /* Reducir el ancho para dejar espacio en los márgenes */
+        margin: 10px auto; /* Centrado */
     }
     .product-pair {
         width: 100%;
         padding: 10px;
         gap: 10px;
+        border-radius: 10px; /* Bordes más suaves */
+        box-sizing: border-box;
+        border: 1px solid #B3E5FF; /* Reducir grosor del borde para móviles */
     }
+
+    /* Contenido dentro de los productos */
     .MousImage, .MousInfo, .SunImage, .SunInfo {
         width: 100%;
+        padding: 5px; /* Espacio adicional entre el contenido */
     }
 }

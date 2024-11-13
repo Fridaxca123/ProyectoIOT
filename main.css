@@ -205,6 +205,7 @@ h3 {
     .product-pair, .data {
         width: 100%;
         max-width: 390px;
+        margin: 0 10px; /* Agrega un margen lateral para evitar que queden pegados a la pantalla */
     }
     .data-item {
         width: 100%;

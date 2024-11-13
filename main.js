@@ -1,9 +1,11 @@
+
+//Actualizacion de datos 
+<script>
 function toggleMenu() {
     const menu = document.getElementById('menu');
     menu.style.display = menu.style.display === 'block' ? 'none' : 'block';
-}
-//Actualizacion de datos 
-<script>
+} 
+
 function actualizarDatos() {
     // Realizar la solicitud AJAX
     fetch('getData.php')

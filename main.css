@@ -184,27 +184,56 @@ h3 {
     max-width: 80%;
 }
 
+.skin-type-selector {
+    margin: 20px;
+    text-align: center;
+    font-family: "PT Serif", serif;
+}
+
+label {
+    font-size: 18px;
+    font-weight: 500;
+    margin-right: 10px;
+}
+
+select {
+    font-size: 16px;
+    padding: 8px;
+    border: 2px solid #B3E5FF;
+    border-radius: 5px;
+    cursor: pointer;
+    background-color: #FFF;
+}
+
 /* Estilos responsivos para dispositivos móviles */
-@media (max-width: 390px) {
+@media (max-width: 640px) {
     h1 {
         font-size: 50px;
     }
     h2, h3 {
         font-size: 24px;
     }
-    .main-container, .data, .product-pair {
+    .whole_info {
+        display: flex;
+        flex-direction: column;
+    }
+    .main-container {
         flex-direction: column;
         align-items: center;
         gap: 20px;
-        width: 90%;
-        max-width: 390px;
-        margin: 20px auto;
+        width: 100%;
+        padding: 20px 0;
+        min-height: fit-content;
     }
     .data, .product-pair {
         padding: 20px;
         border-radius: 15px;
-        margin-bottom: 40px;
         text-align: center;
+    }
+
+    .product-pair{
+        flex-direction: column;
+        min-width: 80%;
     }
     .MousImage, .MousInfo, .SunImage, .SunInfo {
         width: 100%;

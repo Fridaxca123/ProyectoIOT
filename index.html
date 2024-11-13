@@ -26,33 +26,43 @@
             <h1>SkinSense</h1>
         </main>
     </div>
-    <div class="data">
-        <div class="data-item" id="temperature">Temperature: Cargando...</div>
-        <div class="data-item" id="humedity">Humedity: Cargando...</div>
-        <div class="data-item" id="uv">UV: Cargando...</div>
-    </div>
-    
-    <div class="main-container">
-        <div class="product-pair">
-            <div class="MousImage">
-                <img src="images/aveeno.png" alt="Aveeno Moisturizer Image">
+    <div class="whole_info">
+        <div class="data">
+            <div class="data-item" id="temperature">Temperature: Cargando...</div>
+            <div class="data-item" id="humedity">Humedity: Cargando...</div>
+            <div class="data-item" id="uv">UV: Cargando...</div>
+        </div>
+        
+        <div class="skin-type-selector">
+            <label for="skinType">Selecciona tu tipo de piel:</label>
+            <select id="skinType" name="skinType">
+                <option value="grasa">Grasa</option>
+                <option value="media">Media</option>
+                <option value="seca">Seca</option>
+            </select>
+        </div>
+        
+        <div class="main-container">
+            <div class="product-pair">
+                <div class="MousImage">
+                    <img src="images/aveeno.png" alt="Aveeno Moisturizer Image">
+                </div>
+                <div class="MousInfo">
+                    <h2>Aveeno Moisturizer</h2>
+                    <p>Sensitive skin type, specializes in dry skin types.</p>
+                </div>
             </div>
-            <div class="MousInfo">
-                <h2>Aveeno Moisturizer</h2>
-                <p>Sensitive skin type, specializes in dry skin types.</p>
+            <div class="product-pair">
+                <div class="SunImage">
+                    <img src="images/larocheposay.png" alt="La Roche-Posay Image">
+                </div>
+                <div class="SunInfo">
+                    <h2>La Roche-Posay</h2>
+                    <p>Sensitive skin type, specializes in dry skin types.</p>
+                </div>
             </div>
         </div>
-        <div class="product-pair">
-            <div class="SunImage">
-                <img src="images/larocheposay.png" alt="La Roche-Posay Image">
-            </div>
-            <div class="SunInfo">
-                <h2>La Roche-Posay</h2>
-                <p>Sensitive skin type, specializes in dry skin types.</p>
-            </div>
-        </div>
     </div>
-
     <!-- Script para la funcionalidad del menú -->
     <script>
         function toggleMenu() {

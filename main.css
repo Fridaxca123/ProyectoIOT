@@ -1,85 +1,4 @@
-/* Define el estilo de la fuente y elimina los márgenes del body */
-body {
-    font-family: "PT Serif", serif;
-    margin: 0;
-    box-sizing: border-box;
-    display: flex;
-    flex-direction: column;
-    min-height: 100vh;
-}
-
-/* Contenedor principal con gradiente de fondo y alineación centrada */
-.container {
-    background: radial-gradient(circle, rgb(250, 240, 254) 5%, rgb(230, 247, 255) 15%, rgb(255, 250, 250) 85%);
-    width: 100%; /* Ocupa todo el ancho de la pantalla */
-    min-height: 100vh; /* Ocupa toda la altura de la pantalla */
-    display: flex;
-    justify-content: center; /* Centra horizontalmente */
-    align-items: center; /* Centra verticalmente */
-    flex-direction: column;
-    box-sizing: border-box;
-    position: relative;
-    padding: 0 20px; /* Espacio en los lados */
-}
-
-/* Estilo del encabezado en la esquina superior izquierda */
-header {
-    position: absolute;
-    top: 10px;
-    left: 10px;
-    font-size: 12px;
-}
-
-/* Icono de menú con posición y tamaño ajustado */
-.menu-icon {
-    font-size: 50px;
-    cursor: pointer;
-    position: absolute;
-    top: 10px;
-    left: 10px;
-}
-
-/* Estilo del menú desplegable */
-nav {
-    display: none;
-    background-color: #fff;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-    position: absolute;
-    top: 60px;
-    left: 10px;
-    padding: 10px;
-    border-radius: 8px;
-    animation: fadeIn 0.3s ease;
-}
-
-/* Animación para el menú */
-@keyframes fadeIn {
-    from { opacity: 0; }
-    to { opacity: 1; }
-}
-
-/* Contenedor principal de los productos */
-main {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    flex: 1;
-}
-
-/* Contenedor para los productos */
-.products {
-    background-color: rgb(255, 250, 250);
-    width: 100%;
-    min-height: 100vh;
-    display: flex;
-    flex-direction: column;
-    box-sizing: border-box;
-    position: relative;
-    padding: 0 20px;
-}
-
-/* Títulos principales con texto centrado */
+/* Tipos de texto*/
 h1 {
     font-size: 80px;
     font-weight: 700;
@@ -88,7 +7,6 @@ h1 {
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
 }
-
 h2 {
     font-size: 40px;
     font-weight: 700;
@@ -96,10 +14,17 @@ h2 {
     text-align: center;
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
+}
+h3 {
+    font-size: 30px;
+    font-weight: 500;
+    background: black;
+    text-align: center;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
     margin: 0 auto;
     max-width: 80%;
 }
-
 p {
     font-size: 20px;
     font-weight: 300;
@@ -111,27 +36,127 @@ p {
     max-width: 80%;
 }
 
-/* Imágenes dentro de los contenedores de productos */
-.MousImage img, .SunImage img {
-    width: 100%;
-    height: auto;
-    border-radius: 10px;
-    object-fit: contain;
+/* Icono de menú con posición y tamaño ajustado */
+.menu-icon {
+    font-size: 50px;
+    cursor: pointer;
+    position: absolute;
+    top: 10px;
+    left: 10px;
+}
+/* Estilo del menú desplegable */
+nav {
+    display: none;
+    background-color: #fff;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    position: absolute;
+    top: 65px;
+    left: 40px;
+    padding: 20px;
+    border-radius: 5px;
+    animation: fadeIn 0.3s ease;
+}
+nav ul{
+    list-style-type: none;
+    padding: 0; 
+    margin: 0; 
+    text-align: center; 
+}
+/* Animación para el menú */
+@keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
 }
 
+
+/*Contenido presente en todas las intefaces*/
+/* Todo el contenido esta dentro de esto */
+body {
+    font-family: "PT Serif", serif;
+    margin: 0px;
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+/* contenedor colorido (main page) */
+.container {
+    background: radial-gradient(circle, rgb(250, 240, 254) 5%, rgb(230, 247, 255) 15%, rgb(255, 250, 250) 85%);
+    width: 100%; 
+    min-height: 100vh;
+    display: flex;
+    align-items: center; 
+}
+/*Contnido de la intefaz principal*/
+main {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+    flex: 1;
+    margin: 50px 0;
+}
+
+/* Contenido de pagina principal(index) */
+/* Contenedor para la segunda parte dek index (lo blanco) */
+.whole_info {
+    background-color: rgb(255, 250, 250);
+    width: 100%;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column; /* Cambiar la dirección a vertical */
+    justify-content: flex-start; /* Alinea los elementos desde la parte superior */
+    align-items: center; /* Centra los elementos horizontalmente */
+}
+ /* Contenedor de datos con diseño flexible y borde */
+.data {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border: 2px solid #A7D8FF;
+    border-radius: 15px;
+    padding: 40px;
+    width: 90%;
+    max-width: 800px;
+    margin: 50px auto;
+}
+.data-item {
+    text-align: center;
+    width: 30%;
+    font-size: 20px;
+}
+ /* Funcion para seleccionar el tipo de piel*/
+.skin-type-selector {
+    margin: 0 auto 20px;
+    text-align: center;
+    font-family: "PT Serif", serif;
+}
+label {
+    font-size: 25px;
+    font-weight: 500;
+    margin-right: 10px;
+}
+select {
+    font-size: 20px;
+    padding: 10px;
+    border: 2px solid #B3E5FF;
+    border-radius: 5px;
+    cursor: pointer;
+    background-color: #FFF;
+}
 /* Contenedor principal que alinea los elementos en una fila */
-.main-container {
+.products {
     display: flex;
     justify-content: center;
     align-items: center;
     width: 100vw;
-    height: 100vh;
-    margin: 0;
+    height: auto; 
+    min-height: 50vh;
+    margin: 20px;
     padding: 0;
     box-sizing: border-box;
     gap: 20px;
 }
-
 /* Contenedor para cada par de productos */
 .product-pair {
     display: flex;
@@ -142,7 +167,14 @@ p {
     padding: 15px;
     width: 45%;
     box-sizing: border-box;
-    gap: 10px;
+    gap: 20px;
+}
+/* Imágenes dentro de los contenedores de productos */
+.MousImage img, .SunImage img {
+    width: 100%;
+    height: auto;
+    border-radius: 10px;
+    object-fit: contain;
 }
 
 /* Imagen y texto dentro de los contenedores de productos */
@@ -151,94 +183,7 @@ p {
     text-align: center;
 }
 
-/* Contenedor de datos con diseño flexible y borde */
-.data {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    border: 2px solid #A7D8FF;
-    border-radius: 15px;
-    padding: 30px;
-    width: 90%;
-    max-width: 800px;
-    margin: 40px auto;
-    box-sizing: border-box;
-}
 
-/* Cada elemento de datos dentro del contenedor */
-.data-item {
-    text-align: center;
-    width: 30%;
-    font-size: 18px;
-}
 
-/* Subtítulos */
-h3 {
-    font-size: 30px;
-    font-weight: 500;
-    background: black;
-    text-align: center;
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-    margin: 0 auto;
-    max-width: 80%;
-}
 
-.skin-type-selector {
-    margin: 20px;
-    text-align: center;
-    font-family: "PT Serif", serif;
-}
-
-label {
-    font-size: 18px;
-    font-weight: 500;
-    margin-right: 10px;
-}
-
-select {
-    font-size: 16px;
-    padding: 8px;
-    border: 2px solid #B3E5FF;
-    border-radius: 5px;
-    cursor: pointer;
-    background-color: #FFF;
-}
-
-/* Estilos responsivos para dispositivos móviles */
-@media (max-width: 640px) {
-    h1 {
-        font-size: 50px;
-    }
-    h2, h3 {
-        font-size: 24px;
-    }
-    .whole_info {
-        display: flex;
-        flex-direction: column;
-    }
-    .main-container {
-        flex-direction: column;
-        align-items: center;
-        gap: 20px;
-        width: 100%;
-        padding: 20px 0;
-        min-height: fit-content;
-    }
-    .data, .product-pair {
-        padding: 20px;
-        border-radius: 15px;
-        text-align: center;
-    }
-
-    .product-pair{
-        flex-direction: column;
-        min-width: 80%;
-    }
-    .MousImage, .MousInfo, .SunImage, .SunInfo {
-        width: 100%;
-        text-align: center;
-        margin-top: 10px;
-    }
-}
 

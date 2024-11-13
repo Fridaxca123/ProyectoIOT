@@ -217,7 +217,7 @@ h3 {
         border: 2px solid #A7D8FF;
         border-radius: 15px;
         padding: 20px;
-        margin-bottom: 0;
+        margin-bottom: 30px; /* Incrementa el margen inferior para más separación */
         box-sizing: border-box;
     }
     .product-pair {
@@ -225,7 +225,7 @@ h3 {
         flex-direction: column; /* Coloca el texto debajo de la imagen */
         align-items: center;
         margin-top: 0;
-        margin-bottom: 15px; /* Agrega espacio entre los contenedores de productos */
+        margin-bottom: 30px; /* Incrementa el margen inferior para más separación */
     }
     /* Elimina el margen del último contenedor de producto para evitar espacio extra */
     .product-pair:last-child {
@@ -237,5 +237,3 @@ h3 {
         text-align: center;
     }
 }
-
-

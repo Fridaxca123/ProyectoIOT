@@ -200,7 +200,7 @@ h3 {
     }
     .main-container {
         flex-direction: column;
-        gap: 0; /* Elimina el espacio entre los contenedores */
+        gap: 0; /* Elimina el espacio entre los contenedores de datos y productos */
     }
     .product-pair, .data {
         width: 100%;
@@ -215,12 +215,16 @@ h3 {
         border: 2px solid #A7D8FF;
         border-radius: 15px;
         padding: 20px;
-        margin-bottom: 0; /* Elimina el margen inferior */
+        margin-bottom: 0;
         box-sizing: border-box;
     }
     .product-pair {
-        margin-top: 0; /* Elimina el margen superior */
+        margin-top: 0;
+        margin-bottom: 15px; /* Agrega espacio entre los contenedores de productos */
+    }
+    /* Elimina el margen del último contenedor de producto para evitar espacio extra */
+    .product-pair:last-child {
+        margin-bottom: 0;
     }
 }
-
 

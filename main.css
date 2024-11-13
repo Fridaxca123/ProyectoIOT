@@ -191,6 +191,7 @@ h3 {
 }
 
 /* Estilos responsivos para dispositivos móviles */
+/* Estilos responsivos para dispositivos móviles */
 @media (max-width: 768px) {
     h1 {
         font-size: 50px;
@@ -205,7 +206,7 @@ h3 {
     .product-pair, .data {
         width: 80%;
         max-width: 390px;
-        margin:20px; /* Agrega un margen lateral para evitar que queden pegados a la pantalla */
+        margin: 20px; /* Agrega un margen lateral para evitar que queden pegados a la pantalla */
     }
     .data-item {
         width: 100%;
@@ -220,6 +221,9 @@ h3 {
         box-sizing: border-box;
     }
     .product-pair {
+        display: flex;
+        flex-direction: column; /* Coloca el texto debajo de la imagen */
+        align-items: center;
         margin-top: 0;
         margin-bottom: 15px; /* Agrega espacio entre los contenedores de productos */
     }
@@ -227,5 +231,11 @@ h3 {
     .product-pair:last-child {
         margin-bottom: 0;
     }
+    /* Imagen y texto ocupan el 100% del ancho del contenedor en móviles */
+    .MousImage, .MousInfo, .SunImage, .SunInfo {
+        width: 100%;
+        text-align: center;
+    }
 }
+
 

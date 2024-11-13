@@ -1,25 +1,13 @@
-let currentSlide = 0;
-
-function showSlide(index) {
-    const carousel = document.querySelector('.productos');
-    const totalSlides = Math.ceil(carousel.children.length / 2); // Dividir en grupos de dos productos
-
-    // Ajustar el índice del slide
-    if (index >= totalSlides) currentSlide = 0;
-    else if (index < 0) currentSlide = totalSlides - 1;
-    else currentSlide = index;
-
-    // Mover el carrusel
-    carousel.style.transform = `translateX(-${currentSlide * 100}%)`;
+function toggleMenu() {
+    const menu = document.getElementById('menu');
+    menu.style.display = menu.style.display === 'block' ? 'none' : 'block';
 }
+// Obtener la fecha actual
+const dateElement = document.getElementById('current-date');
+const today = new Date();
+const options = { year: 'numeric', month: 'long', day: 'numeric' };
 
-function nextSlide() {
-    showSlide(currentSlide + 1);
-}
+// Formatear la fecha y actualizar el contenido del elemento
+dateElement.textContent = today.toLocaleDateString('en-US', options);
 
-function prevSlide() {
-    showSlide(currentSlide - 1);
-}
 
-// Iniciar en el primer slide
-showSlide(currentSlide);

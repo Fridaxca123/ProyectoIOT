@@ -191,7 +191,8 @@ h3 {
 }
 
 /* Estilos responsivos para dispositivos móviles */
-@media (max-width: 768px) {
+/* Estilos responsivos para dispositivos móviles */
+@media (max-width: 390px) {
     h1 {
         font-size: 50px;
     }
@@ -200,12 +201,13 @@ h3 {
     }
     .main-container {
         flex-direction: column;
-        gap: 0; /* Elimina el espacio entre los contenedores de datos y productos */
+        align-items: center; /* Alinea los contenedores al centro */
+        gap: 0;
     }
     .product-pair, .data {
-        width: 80%;
+        width: 90%;
         max-width: 390px;
-        margin: 20px; /* Agrega un margen lateral para evitar que queden pegados a la pantalla */
+        margin: 20px auto; /* Ajusta el margen lateral y alinea al centro */
     }
     .data-item {
         width: 100%;
@@ -216,23 +218,19 @@ h3 {
         border: 2px solid #A7D8FF;
         border-radius: 15px;
         padding: 20px;
-        margin-bottom: 30px; /* Incrementa el margen inferior para más separación */
+        margin-bottom: 40px; /* Incrementa el margen inferior */
         box-sizing: border-box;
+        text-align: center;
     }
     .product-pair {
         display: flex;
         flex-direction: column; /* Coloca el texto debajo de la imagen */
         align-items: center;
-        margin-top: 0;
-        margin-bottom: 30px; /* Incrementa el margen inferior para más separación */
+        margin-bottom: 40px; /* Incrementa el margen inferior para más separación */
     }
-    /* Elimina el margen del último contenedor de producto para evitar espacio extra */
-    .product-pair:last-child {
-        margin-bottom: 0;
-    }
-    /* Imagen y texto ocupan el 100% del ancho del contenedor en móviles */
     .MousImage, .MousInfo, .SunImage, .SunInfo {
         width: 100%;
         text-align: center;
     }
 }
+

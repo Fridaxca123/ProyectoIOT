@@ -101,12 +101,12 @@ main {
 /* Contenedor para la segunda parte dek index (lo blanco) */
 .whole_info {
     background-color: rgb(255, 250, 250);
-    width: 100%;
+    width: 100vw; /* Asegurarse de cubrir el ancho total de la ventana */
     min-height: 100vh;
+    padding: 10px; /* Espaciado alrededor de los bordes */
     display: flex;
-    flex-direction: column; /* Cambiar la dirección a vertical */
-    justify-content: flex-start; /* Alinea los elementos desde la parte superior */
-    align-items: center; /* Centra los elementos horizontalmente */
+    flex-direction: column;
+    align-items: center;
 }
  /* Contenedor de datos con diseño flexible y borde */
 .data {
@@ -182,9 +182,9 @@ select {
     width: 50%;
     text-align: center;
 }
-
-/* Estilos para pantallas de telefono */
+/* Estilos específicos para iPhone 13 y dispositivos pequeños */
 @media (max-width: 390px) {
+    /* Encabezados y textos */
     h1 {
         font-size: 48px;
     }
@@ -198,29 +198,47 @@ select {
         font-size: 16px;
         max-width: 90%;
     }
+
+    /* Icono del menú */
     .menu-icon {
         font-size: 36px;
         top: 5px;
         left: 5px;
     }
+
+    /* Contenedor principal con fondo adaptado y márgenes */
     .container {
         padding: 10px;
+        width: 100%;
     }
+
+    /* Espaciado y ajuste del contenedor principal */
     main {
         margin: 20px 10px;
     }
+
+    /* Ajuste del contenedor de datos para dispositivos pequeños */
     .data {
         padding: 20px;
         flex-direction: column;
         width: 100%;
+        max-width: 90%; /* Limitar ancho en dispositivos pequeños */
+        margin: 20px auto; /* Espaciado desde el borde */
+        box-sizing: border-box;
     }
+
+    /* Elementos dentro de `.data` */
     .data-item {
         font-size: 18px;
         width: 100%;
+        margin-bottom: 10px;
     }
+
+    /* Selector de tipo de piel */
     .skin-type-selector {
-        margin: 10px;
+        margin: 10px 0;
         font-size: 20px;
+        padding: 0 5px;
     }
     label {
         font-size: 20px;
@@ -229,6 +247,8 @@ select {
         font-size: 18px;
         padding: 8px;
     }
+
+    /* Ajuste de los productos */
     .products {
         flex-direction: column;
         gap: 15px;
@@ -245,7 +265,3 @@ select {
         width: 100%;
     }
 }
-
-
-
-

@@ -191,7 +191,6 @@ h3 {
 }
 
 /* Estilos responsivos para dispositivos móviles */
-/* Estilos responsivos para dispositivos móviles */
 @media (max-width: 390px) {
     h1 {
         font-size: 50px;
@@ -200,21 +199,20 @@ h3 {
         font-size: 24px;
     }
     .main-container {
+        display: flex;
         flex-direction: column;
-        align-items: center; /* Alinea los contenedores al centro */
-        gap: 0;
+        align-items: center; /* Centra los contenedores */
+        gap: 20px; /* Añade un espacio entre contenedores */
     }
     .product-pair, .data {
         width: 90%;
         max-width: 390px;
-        margin: 20px auto; /* Ajusta el margen lateral y alinea al centro */
-    }
-    .data-item {
-        width: 100%;
-        font-size: 16px;
+        margin: 20px auto; /* Centra y ajusta los márgenes laterales */
     }
     .data {
-        display: block;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
         border: 2px solid #A7D8FF;
         border-radius: 15px;
         padding: 20px;
@@ -231,6 +229,6 @@ h3 {
     .MousImage, .MousInfo, .SunImage, .SunInfo {
         width: 100%;
         text-align: center;
+        margin-top: 10px; /* Añade espacio entre la imagen y el texto */
     }
 }
-

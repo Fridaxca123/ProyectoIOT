@@ -79,12 +79,6 @@ main {
     padding: 0 20px;
 }
 
-/* Estilos para imágenes específicas */
-.MousImage, .SunImager {
-    display: inline-block;
-    margin: 10px;
-}
-
 /* Títulos principales con texto centrado */
 h1 {
     font-size: 80px;
@@ -198,37 +192,24 @@ h3 {
     h2, h3 {
         font-size: 24px;
     }
-    .main-container {
-        display: flex;
+    .main-container, .data, .product-pair {
         flex-direction: column;
-        align-items: center; /* Centra los contenedores */
-        gap: 20px; /* Añade un espacio entre contenedores */
-    }
-    .product-pair, .data {
+        align-items: center;
+        gap: 20px;
         width: 90%;
         max-width: 390px;
-        margin: 20px auto; /* Centra y ajusta los márgenes laterales */
+        margin: 20px auto;
     }
-    .data {
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        border: 2px solid #A7D8FF;
-        border-radius: 15px;
+    .data, .product-pair {
         padding: 20px;
-        margin-bottom: 40px; /* Incrementa el margen inferior */
-        box-sizing: border-box;
+        border-radius: 15px;
+        margin-bottom: 40px;
         text-align: center;
-    }
-    .product-pair {
-        display: flex;
-        flex-direction: column; /* Coloca el texto debajo de la imagen */
-        align-items: center;
-        margin-bottom: 40px; /* Incrementa el margen inferior para más separación */
     }
     .MousImage, .MousInfo, .SunImage, .SunInfo {
         width: 100%;
         text-align: center;
-        margin-top: 10px; /* Añade espacio entre la imagen y el texto */
+        margin-top: 10px;
     }
 }
+

@@ -144,30 +144,28 @@ select {
     cursor: pointer;
     background-color: #FFF;
 }
-/* Contenedor principal que alinea los elementos en una fila */
+/* Contenedor principal que alinea los productos en filas de dos */
 .products {
     display: flex;
+    flex-wrap: wrap; /* Permite que los elementos se muevan a una nueva línea si no caben */
     justify-content: center;
-    align-items: center;
-    width: 100vw;
-    height: auto; 
-    min-height: 50vh;
-    margin: 20px;
+    gap: 20px;
+    width: 100%; /* Asegura que use todo el ancho disponible */
+    margin: 20px auto; /* Centra el contenedor */
     padding: 0;
     box-sizing: border-box;
-    gap: 20px;
 }
-/* Contenedor para cada par de productos */
+
+/* Cada contenedor de producto ocupa el 45% del ancho, asegurando dos por línea */
 .product-pair {
-    display: flex;
-    align-items: center;
-    justify-content: center;
+    flex: 0 1 calc(50% - 40px); /* Dos elementos por fila con un margen de 20px entre ellos */
+    box-sizing: border-box;
     border: 2px solid #B3E5FF;
     border-radius: 15px;
     padding: 15px;
-    width: 45%;
-    box-sizing: border-box;
-    gap: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 
 /* Imágenes dentro de los productos */
@@ -192,9 +190,10 @@ select {
     margin: 0 0 5px;
 }
 .product-info p {
-    font-size: 18px;
+    font-size: 14px;
     margin: 0;
 }
+
 /* Imágenes dentro de los contenedores de productos */
 .MousImage img, .SunImage img {
     width: 100%;

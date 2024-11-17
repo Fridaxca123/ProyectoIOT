@@ -1,4 +1,4 @@
-/* Tipos de texto*/
+/* Tipos de texto */
 h1 {
     font-size: 80px;
     font-weight: 700;
@@ -109,7 +109,7 @@ main {
     align-items: center;
 }
  /* Contenedor de datos con diseño flexible y borde */
-.data {
+ .data {
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -169,6 +169,32 @@ select {
     box-sizing: border-box;
     gap: 20px;
 }
+
+/* Imágenes dentro de los productos */
+.product-pair img {
+    width: 300px;
+    height: 300px;
+    border-radius: 10px;
+    object-fit: cover;
+    flex-shrink: 0;
+}
+
+/* Texto de productos */
+.product-info {
+    flex: 1;
+    text-align: left;
+    font-size: 20px;
+    color: #333;
+}
+.product-info h2 {
+    font-size: 20px;
+    font-weight: bold;
+    margin: 0 0 5px;
+}
+.product-info p {
+    font-size: 18px;
+    margin: 0;
+}
 /* Imágenes dentro de los contenedores de productos */
 .MousImage img, .SunImage img {
     width: 100%;
@@ -182,65 +208,87 @@ select {
     width: 50%;
     text-align: center;
 }
-/* Estilos específicos para dispositivos móviles */
-@media (max-width: 390px) {
-    /* Ajuste de encabezados y textos */
+/* Estilos generales para pantallas pequeñas */
+@media (max-width: 768px) {
+    /* Ajustes para encabezados */
     h1 {
-        font-size: 48px;
+        font-size: 40px; /* Reducir tamaño del texto */
     }
     h2 {
-        font-size: 28px;
+        font-size: 30px;
     }
     h3 {
-        font-size: 24px;
+        font-size: 20px;
     }
     p {
         font-size: 16px;
-        max-width: 90%;
     }
 
-    /* Icono de menú */
+    /* Ajustar icono del menú */
     .menu-icon {
-        font-size: 36px;
+        font-size: 30px;
         top: 5px;
         left: 5px;
     }
 
-    /* Contenedor principal y espaciado */
+    /* Ajustar contenedor principal */
     .container {
-        padding: 10px;
-        width: 100%;
+        padding: 20px; /* Añadir espacio interno */
     }
 
-    /* Contenedor de datos */
+    /* Ajustes para datos */
     .data {
+        flex-direction: column; /* Cambiar de fila a columna */
         padding: 20px;
-        flex-direction: column;
-        width: 90%;
-        max-width: 90%;
-        margin: 20px auto;
-        box-sizing: border-box;
+        gap: 20px; /* Espaciado entre elementos */
+    }
+    .data-item {
+        font-size: 16px; /* Reducir tamaño del texto */
+        width: 100%; /* Ocupa el ancho completo */
     }
 
-    /* Contenedores de productos */
+    /* Ajustes para selectores */
+    label {
+        font-size: 20px;
+    }
+    select {
+        font-size: 18px;
+        padding: 8px;
+    }
+
+    /* Ajustar productos */
     .products {
-        flex-direction: column;
-        gap: 15px;
-        width: 90%; /* Reducir el ancho para dejar espacio en los márgenes */
-        margin: 10px auto; /* Centrado */
+        flex-direction: column; /* Cambiar de fila a columna */
+        gap: 15px; /* Espaciado entre contenedores */
+        padding: 10px;
     }
     .product-pair {
-        width: 100%;
-        padding: 10px;
-        gap: 10px;
-        border-radius: 10px; /* Bordes más suaves */
-        box-sizing: border-box;
-        border: 1px solid #B3E5FF; /* Reducir grosor del borde para móviles */
+        flex-direction: column; /* Cambiar alineación interna */
+        width: 90%; /* Ocupa casi todo el ancho */
+        padding: 15px;
     }
 
-    /* Contenido dentro de los productos */
+    /* Imágenes dentro de los productos */
+    .product-pair img {
+        width: 200px; /* Reducir tamaño de las imágenes */
+        height: 200px;
+    }
+
+    /* Texto de productos */
+    .product-info {
+        text-align: center; /* Centrar texto en pantallas pequeñas */
+        font-size: 16px; /* Reducir tamaño del texto */
+    }
+    .product-info h2 {
+        font-size: 18px;
+    }
+    .product-info p {
+        font-size: 14px;
+    }
+
+    /* Contenedores de imagen y texto */
     .MousImage, .MousInfo, .SunImage, .SunInfo {
-        width: 100%;
-        padding: 5px; /* Espacio adicional entre el contenido */
+        width: 100%; /* Ocupa todo el ancho */
+        text-align: center;
     }
 }

@@ -20,7 +20,7 @@
                     <li><a href="products.html" style="text-decoration: underline;">Products</a></li>
                 </ul>
             </nav>
-        </header>  
+        </header>
         <main>
             <h1>SkinSense</h1>
         </main>
@@ -29,10 +29,10 @@
     <div class="whole_info">
         <div class="data">
             <div class="data-item" id="temperature">Temperature: Cargando...</div>
-            <div class="data-item" id="humedity">Humedity: Cargando...</div>
+            <div class="data-item" id="humedity">Humidity: Cargando...</div>
             <div class="data-item" id="uv">UV: Cargando...</div>
         </div>
-        
+
         <div class="skin-type-selector">
             <label for="skinType">Selecciona tu tipo de piel:</label>
             <select id="skinType" name="skinType" onchange="mostrarProductos()">
@@ -42,41 +42,110 @@
                 <option value="seca">Dry</option>
             </select>
         </div>
-        
-        <div class="products">
-            <div class="product-pair">
-                <div class="MousImage">
-                    <img src="images/aveeno.png" alt="Aveeno Moisturizer Image">
-                </div>
-                <div class="MousInfo">
-                    <h2>Aveeno Moisturizer</h2>
-                    <p>Sensitive skin type, specializes in dry skin types.</p>
-                </div>
-            </div>
-            <div class="product-pair">
-                <div class="SunImage">
-                    <img src="images/larocheposay.png" alt="La Roche-Posay Image">
-                </div>
-                <div class="SunInfo">
-                    <h2>La Roche-Posay</h2>
-                    <p>Sensitive skin type, specializes in dry skin types.</p>
-                </div>
-            </div>
-        </div>
+
+        <!-- Contenedor de productos con la clase 'product-pair' para organizarlos en pares -->
+        <div id="products" class="productsContainer"></div>
     </div>
-    <!-- Script para la funcionalidad del menú -->
+
     <script>
         function toggleMenu() {
             const menu = document.getElementById('menu');
             menu.style.display = menu.style.display === 'block' ? 'none' : 'block';
         }
+
+        const data = {
+            uv: 7,
+            temperature: 28
+        };
+
+        document.getElementById('uv').textContent = `UV: ${data.uv}`;
+        document.getElementById('temperature').textContent = `Temperature: ${data.temperature}°C`;
+
         function mostrarProductos() {
-        const skinType = document.getElementById("skinType").value;
-        window.location.href = `products.html?skinType=${skinType}`;
+            const skinType = document.getElementById("skinType").value;
+
+            if (skinType === "nada") {
+                alert("Por favor, selecciona un tipo de piel.");
+                return;
+            }
+
+            const uv = data.uv;
+            const temperature = data.temperature;
+
+            let sunscreen = {};
+            let moisturizer = {};
+
+            if (uv > 6) {
+                switch (skinType) {
+                    case "grasa":
+                        sunscreen = { name: "La Roche-Posay Anthelios", img: "images/larocheposay.png", desc: "Perfect for oily skin with high UV protection." };
+                        break;
+                    case "media":
+                        sunscreen = { name: "Neutrogena Hydro Boost SPF", img: "images/neutrogena.png", desc: "Great for mixed skin types with lightweight hydration." };
+                        break;
+                    case "seca":
+                        sunscreen = { name: "Aveeno Protect + Hydrate", img: "images/aveeno.png", desc: "Hydrates and protects dry skin in high UV conditions." };
+                        break;
+                }
+            } else {
+                sunscreen = { name: "No Sunscreen Needed", img: "images/nosunscreen.png", desc: "Low UV levels, no sunscreen required today." };
+            }
+
+            if (temperature > 25) {
+                switch (skinType) {
+                    case "grasa":
+                        moisturizer = { name: "Clinique Dramatically Different Gel", img: "images/clinique.png", desc: "Lightweight gel for oily skin in warm weather." };
+                        break;
+                    case "media":
+                        moisturizer = { name: "Neutrogena Hydro Boost Water Gel", img: "images/hydroboost.png", desc: "Hydrating water gel for mixed skin." };
+                        break;
+                    case "seca":
+                        moisturizer = { name: "Cetaphil Rich Hydrating Cream", img: "images/cetaphil.png", desc: "Rich hydration for dry skin in warm temperatures." };
+                        break;
+                }
+            } else if (temperature > 15) {
+                switch (skinType) {
+                    case "grasa":
+                        moisturizer = { name: "La Roche-Posay Toleriane", img: "images/toleriane.png", desc: "Balances oily skin in mild temperatures." };
+                        break;
+                    case "media":
+                        moisturizer = { name: "Simple Hydrating Light Moisturizer", img: "images/simple.png", desc: "Gentle hydration for mixed skin in mild weather." };
+                        break;
+                    case "seca":
+                        moisturizer = { name: "Aveeno Daily Moisturizing Lotion", img: "images/aveeno.png", desc: "Hydrates and soothes dry skin in mild conditions." };
+                        break;
+                }
+            } else {
+                moisturizer = { name: "Rich Moisturizer Needed", img: "images/richmoisturizer.png", desc: "Use a heavy-duty moisturizer for cold temperatures." };
+            }
+
+            const productsContainer = document.getElementById("products");
+            productsContainer.innerHTML = `
+                <div class="product-pair">
+                    <div class="product-pair-image">
+                        <img src="${sunscreen.img}" alt="${sunscreen.name}">
+                    </div>
+                    <div class="product-info">
+                        <h3>${sunscreen.name}</h3>
+                        <p>${sunscreen.desc}</p>
+                    </div>
+                </div>
+                <div class="product-pair">
+                    <div class="product-pair-image">
+                        <img src="${moisturizer.img}" alt="${moisturizer.name}">
+                    </div>
+                    <div class="product-info">
+                        <h3>${moisturizer.name}</h3>
+                        <p>${moisturizer.desc}</p>
+                    </div>
+                </div>
+            `;
         }
     </script>
-
 </body>
 </html>
+
+
+
 
 

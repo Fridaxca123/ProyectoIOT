@@ -35,10 +35,11 @@
         
         <div class="skin-type-selector">
             <label for="skinType">Selecciona tu tipo de piel:</label>
-            <select id="skinType" name="skinType">
-                <option value="grasa">Grasa</option>
-                <option value="media">Media</option>
-                <option value="seca">Seca</option>
+            <select id="skinType" name="skinType" onchange="mostrarProductos()">
+                <option value="nada">...</option>
+                <option value="grasa">Oily</option>
+                <option value="media">Mixed</option>
+                <option value="seca">Dry</option>
             </select>
         </div>
         
@@ -69,33 +70,12 @@
             const menu = document.getElementById('menu');
             menu.style.display = menu.style.display === 'block' ? 'none' : 'block';
         }
-    </script>
-
-    <!-- Script para la actualización de datos -->
-    <script>
-        function actualizarDatos() {
-            // Realizar la solicitud AJAX
-            fetch('getData.php')
-                .then(response => response.json())
-                .then(data => {
-                    if (!data.error) {
-                        // Actualizar los elementos HTML con los datos recibidos
-                        document.getElementById("temperature").innerText = `Temperatura: ${data.temperatura}°C`;
-                        document.getElementById("humedity").innerText = `Humedad: ${data.humedad}%`;
-                        document.getElementById("uv").innerText = `UV: ${data.uv}`;
-                    } else {
-                        console.error(data.error);
-                    }
-                })
-                .catch(error => console.error('Error al obtener datos:', error));
+        function mostrarProductos() {
+        const skinType = document.getElementById("skinType").value;
+        window.location.href = `products.html?skinType=${skinType}`;
         }
-
-        // Llamar a actualizarDatos cada 5 segundos para actualizar en tiempo real
-        setInterval(actualizarDatos, 5000);
-
-        // Ejecutar actualizarDatos cuando se carga la página por primera vez
-        document.addEventListener("DOMContentLoaded", actualizarDatos);
     </script>
+
 </body>
 </html>
 

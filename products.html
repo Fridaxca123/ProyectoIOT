@@ -5,9 +5,6 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>SkinSense</title>
     <link rel="stylesheet" href="main.css">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@200..700&family=PT+Serif:ital,wght@0,400;0,700;1,400;1,700&display=swap" rel="stylesheet">
 </head>
 <body>
     <div class="container">
@@ -15,29 +12,88 @@
             <div class="menu-icon" onclick="toggleMenu()">☰</div>
             <nav id="menu">
                 <ul>
-                    <li><a href="index.html" style="text-decoration: underline;">Home</a></li>
-                    <li><a href="info.html" style="text-decoration: underline;">Info</a></li>
-                    <li><a href="products.html" style="text-decoration: underline;">Products</a></li>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="info.html">Info</a></li>
+                    <li><a href="products.html">Products</a></li>
                 </ul>
             </nav>
         </header>
         
         <main>
-            <h2>The products we work with: </h2>
-            <p>Taking care of your skin is important for many reasons.
-                A good skincare routine helps keep your complexion looking healthy and glowing,
-                prevents acne, reduces wrinkles, and helps you look more youthful. Proactively
-                caring for your skin is easier and cheaper than repairing skin problems in the future</p>
+            <h2>The products we work with:</h2>
+            <p>Taking care of your skin is important for many reasons...</p>
         </main>
     </div>
     <div class="whole_info">
-
+        <div class="products" id="productsContainer"></div>
     </div>
+
     <script>
         function toggleMenu() {
             const menu = document.getElementById('menu');
             menu.style.display = menu.style.display === 'block' ? 'none' : 'block';
         }
+    
+        function obtenerTipoPiel() {
+            const params = new URLSearchParams(window.location.search);
+            return params.get('skinType');
+        }
+    
+        function mostrarProductos() {
+            const skinType = obtenerTipoPiel();
+            const productsContainer = document.getElementById('productsContainer');
+            productsContainer.innerHTML = ''; // Limpiar contenido
+    
+            if (!skinType) {
+                alert("Please return to main page and select a type of skin");
+                return; // Detener ejecución si no hay selección
+            }
+    
+            // Definir productos según el tipo de piel
+            const productosPorTipoPiel = {
+                grasa: [
+                    { nombre: 'Beauty Of Joseon - Barra Solar Mate', descripcion: 'Descripción para piel grasa', imagen: 'PhotosIOT/01-S-6ABOVE-OILY.png' },
+                    { nombre: 'Beauty of Joseon - Gel de Agua Red Bean', descripcion: 'Descripción para piel grasa', imagen: 'PhotosIOT/02-M-HOTHUMID-OILY.png' },
+                ],
+                media: [
+                    { nombre: 'Centella Calming Gel Cream', descripcion: 'Descripción para piel media', imagen: 'PhotosIOT/02-M-HOTHUMID-MIXED.png' },
+                    { nombre: 'La Roche-Posay Effaclar Mat Anti-Shine Face Moisturizer', descripcion: 'Descripción para piel media', imagen: 'PhotosIOT/03-M-HOTDRY-MIXED.png' },
+                ],
+                seca: [
+                    { nombre: 'DRUNK ELEPHANT b-hydra™ intensive hydration serum', descripcion: 'Descripción para piel seca', imagen: 'PhotosIOT/02-M-HOTHUMID-DRY.png' },
+                    { nombre: 'Intense Hydration Day Lotion', descripcion: 'Descripción para piel seca', imagen: 'PhotosIOT/03-M-HOTDRY-DRY.png' },
+                ]
+            };
+    
+            // Obtener productos correspondientes al tipo de piel
+            const productos = productosPorTipoPiel[skinType] || [];
+    
+            if (productos.length === 0) {
+                alert("Invalid type of skin or products couldn't be found ");
+                return;
+            }
+    
+            // Generar contenido HTML
+            productos.forEach(producto => {
+                const productHTML = `
+                    <div class="product-pair">
+                        <div class="product-image">
+                            <img src="${producto.imagen}" alt="${producto.nombre}">
+                        </div>
+                        <div class="product-info">
+                            <h2>${producto.nombre}</h2>
+                            <p>${producto.descripcion}</p>
+                        </div>
+                    </div>
+                `;
+                productsContainer.innerHTML += productHTML;
+            });
+        }
+    
+        // Llama a mostrarProductos al cargar la página
+        document.addEventListener("DOMContentLoaded", mostrarProductos);
     </script>
+    
+         
 </body>
 </html>

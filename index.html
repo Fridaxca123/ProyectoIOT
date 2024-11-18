@@ -29,7 +29,7 @@
     <div class="whole_info">
         <div class="data">
             <div class="data-item" id="temperature">Temperature: Cargando...</div>
-            <div class="data-item" id="humedity">Humidity: Cargando...</div>
+            <div class="data-item" id="humidity">Humidity: Cargando...</div>
             <div class="data-item" id="uv">UV: Cargando...</div>
         </div>
 
@@ -42,9 +42,7 @@
                 <option value="seca">Dry</option>
             </select>
         </div>
-
-        <!-- Contenedor de productos con la clase 'product-pair' para organizarlos en pares -->
-        <div id="products" class="productsContainer"></div>
+        <div class="products" id="productsContainer"></div>
     </div>
 
     <script>
@@ -52,81 +50,134 @@
             const menu = document.getElementById('menu');
             menu.style.display = menu.style.display === 'block' ? 'none' : 'block';
         }
-
+    
         const data = {
-            uv: 7,
-            temperature: 28
+            uv: 7, // UV index
+            temperature: 20, // Temperatura
+            humidity: 20 // Humedad
         };
-
+    
         document.getElementById('uv').textContent = `UV: ${data.uv}`;
         document.getElementById('temperature').textContent = `Temperature: ${data.temperature}°C`;
-
+        document.getElementById('humidity').textContent = `Humidity: ${data.humidity}%`;
+    
         function mostrarProductos() {
             const skinType = document.getElementById("skinType").value;
-
+    
             if (skinType === "nada") {
                 alert("Por favor, selecciona un tipo de piel.");
                 return;
             }
-
+    
             const uv = data.uv;
             const temperature = data.temperature;
-
+            const humidity = data.humidity;
+    
             let sunscreen = {};
             let moisturizer = {};
-
+    
             if (uv > 6) {
                 switch (skinType) {
                     case "grasa":
-                        sunscreen = { name: "La Roche-Posay Anthelios", img: "images/larocheposay.png", desc: "Perfect for oily skin with high UV protection." };
+                        sunscreen = { name: "Beauty Of Joseon - Barra Solar Mate", 
+                        img: "PhotosIOT/01-S-6ABOVE-OILY.png",
+                        desc: "<ul><li>SPF 50</li><li>PAA ++++</li><li>Oily skin</li></ul>" };
                         break;
                     case "media":
-                        sunscreen = { name: "Neutrogena Hydro Boost SPF", img: "images/neutrogena.png", desc: "Great for mixed skin types with lightweight hydration." };
+                        sunscreen = { name: "ISDIN eryfotona ageless ultralight emulsion spf 50", 
+                        img: "PhotosIOT/01-S-6ABOVE-MIXED.png", 
+                        desc: "<ul><li>SPF 50</li><li>PA +++</li><li>For all skin types, specialized in mixed</li></ul>" };
                         break;
                     case "seca":
-                        sunscreen = { name: "Aveeno Protect + Hydrate", img: "images/aveeno.png", desc: "Hydrates and protects dry skin in high UV conditions." };
+                        sunscreen = { name: "Eucerin Sun Advanced Hydration SPF 50 Sunscreen Lotion",
+                        img: "PhotosIOT/01-S-6ABOVE-DRY.png", 
+                        desc: "<ul><li>SPF 50</li><li>PA +++</li><li>Dry Skin</li><li>Lightweight</li></ul>"};
                         break;
                 }
-            } else {
-                sunscreen = { name: "No Sunscreen Needed", img: "images/nosunscreen.png", desc: "Low UV levels, no sunscreen required today." };
-            }
-
-            if (temperature > 25) {
+            } else if (uv < 6) {
                 switch (skinType) {
                     case "grasa":
-                        moisturizer = { name: "Clinique Dramatically Different Gel", img: "images/clinique.png", desc: "Lightweight gel for oily skin in warm weather." };
+                        sunscreen = { name: "Bioré UV Aqua Rich SPF 50 Moisturizing Sunscreen", 
+                        img: "PhotosIOT/06-S-6BELOW-OILY.png",
+                        desc: "<ul><li>SPF 50</li><li>PA ++++</li><li>Oily Skin</li><li>Oil Free</li><li>Lightweight</li></ul>" };
                         break;
                     case "media":
-                        moisturizer = { name: "Neutrogena Hydro Boost Water Gel", img: "images/hydroboost.png", desc: "Hydrating water gel for mixed skin." };
+                        sunscreen = { name: "Le Prunier plumscreen spf 3", 
+                        img: "PhotosIOT/06-S-6BELOW-MIXED.png", 
+                        desc: "<ul><li>PA +++</li><li>SPF 31</li><li>Mixed Skin</li></ul>" };
                         break;
                     case "seca":
-                        moisturizer = { name: "Cetaphil Rich Hydrating Cream", img: "images/cetaphil.png", desc: "Rich hydration for dry skin in warm temperatures." };
+                        sunscreen = { name: "CeraVe Hydrating Sheer Sunscreen SPF 30",
+                        img: "PhotosIOT/06-S-6BELOW-DRY.png", 
+                        desc: "<ul><li>SPF 30+</li><li>PA +++</li><li>Dry skin and sensitive skin</li><li>Light weight</li></ul>"};
                         break;
                 }
-            } else if (temperature > 15) {
+            }
+    
+            if (temperature < 15 || humidity < 30) {
                 switch (skinType) {
                     case "grasa":
-                        moisturizer = { name: "La Roche-Posay Toleriane", img: "images/toleriane.png", desc: "Balances oily skin in mild temperatures." };
+                        moisturizer = { name: "Beauty of Joseon - Gel de Agua Red Bean", 
+                        img: "PhotosIOT/02-M-HOTHUMID-OILY.png",
+                        desc: "<ul><li>Oily Skin</li><li>Water Gel Based</li><li>Hydrates the Skin</li><li>Light Texture</li></ul>"};
                         break;
                     case "media":
-                        moisturizer = { name: "Simple Hydrating Light Moisturizer", img: "images/simple.png", desc: "Gentle hydration for mixed skin in mild weather." };
+                        moisturizer = { name: "Centella Calming Gel Cream",
+                        img: "PhotosIOT/02-M-HOTHUMID-MIXED.png",
+                        desc: "<ul><li>Sensitive Skin</li><li>Calming Formula</li><li>Mixed Skin</li><li>Gel Based</li></ul>" };
                         break;
                     case "seca":
-                        moisturizer = { name: "Aveeno Daily Moisturizing Lotion", img: "images/aveeno.png", desc: "Hydrates and soothes dry skin in mild conditions." };
+                        moisturizer = { name: "DRUNK ELEPHANT b-hydra intensive hydration serum",
+                        img: "PhotosIOT/02-M-HOTHUMID-DRY.png", 
+                        desc: "<ul><li>Hydrates</li><li>Brightens</li><li>Improves skin texture</li><li>Fixes Dryness</li><li>Water base</li></ul>" };
                         break;
                 }
-            } else {
-                moisturizer = { name: "Rich Moisturizer Needed", img: "images/richmoisturizer.png", desc: "Use a heavy-duty moisturizer for cold temperatures." };
+            } else if (temperature >= 15 && temperature <= 25 && humidity >= 30 && humidity <= 60) {
+                switch (skinType) {
+                    case "grasa":
+                        moisturizer = { name: "Cetaphil daily oil-free hydrating lotion",
+                        img: "PhotosIOT/04-M-COLDHUMID-OILY.png",
+                        desc: "<ul><li>Oil Free</li><li>Oily Skin</li><li>Hypoallergenic</li><li>For Sensitive Skin</li><li>Paraben Free</li></ul>"};
+                        break;
+                    case "media":
+                        moisturizer = { name: "Belif The True Cream Aqua Bomb",
+                        img: "PhotosIOT/04-M-COLDHUMID-MIXED.png",
+                        desc: "<ul><li>For all skin types specialized in mixed</li><li>Lightweight formula</li><li>Fixes Dryness</li><li>Gel Based Cream</li><li>Hydrates</li></ul>"};
+                        break;
+                    case "seca":
+                        moisturizer = { name: "Intense Hydration Day Lotion", 
+                        img: "PhotosIOT/03-M-HOTDRY-DRY.png", 
+                        desc: "<ul><li>Dry Skin</li><li>Hydrates</li><li>Non-greasy</li><li>Cream Base</li></ul>" };
+                        break;
+                }
+            } else if (temperature > 25 && humidity > 60) {
+                switch (skinType) {
+                    case "grasa":
+                        moisturizer = { name: "Neutrogena hydro boost water gel", 
+                        img: "PhotosIOT/05-M-COLDDRY-OILY.png", 
+                        desc: "<ul><li>Light Texture</li><li>Water Based</li><li>Oily Skin</li><li>Hyaluronic Acid</li><li>Hypoallergenic</li><li>Oil Free</li></ul>" };
+                        break;
+                    case "media":
+                        moisturizer = { name: "First Aid Beauty Ultra Repair Cream-6 oz",
+                        img: "PhotosIOT/05-M-COLDDRY-MIXED.png", 
+                        desc: "<ul><li>Sensitive Skin</li><li>Hydrates</li><li>Soothes skin</li><li>Rich in Vitamins</li><li>Cream Base</li></ul>" };
+                        break;
+                    case "seca":
+                        moisturizer = { name: "Kiehl’s Ultra Facial Cream", 
+                        img: "PhotosIOT/05-M-COLDDRY-DRY.png", 
+                        desc: "Use a heavy-duty moisturizer for cold temperatures." };
+                        break;
+                }
             }
-
-            const productsContainer = document.getElementById("products");
+    
+            const productsContainer = document.getElementById("productsContainer");
             productsContainer.innerHTML = `
                 <div class="product-pair">
                     <div class="product-pair-image">
                         <img src="${sunscreen.img}" alt="${sunscreen.name}">
                     </div>
                     <div class="product-info">
-                        <h3>${sunscreen.name}</h3>
+                        <h2>${sunscreen.name}</h2>
                         <p>${sunscreen.desc}</p>
                     </div>
                 </div>
@@ -135,13 +186,13 @@
                         <img src="${moisturizer.img}" alt="${moisturizer.name}">
                     </div>
                     <div class="product-info">
-                        <h3>${moisturizer.name}</h3>
+                        <h2>${moisturizer.name}</h2>
                         <p>${moisturizer.desc}</p>
                     </div>
                 </div>
             `;
         }
-    </script>
+    </script>    
 </body>
 </html>
 

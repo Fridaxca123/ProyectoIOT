@@ -43,6 +43,12 @@ p {
     position: absolute;
     top: 10px;
     left: 10px;
+    text-align: left; /* Alinea el texto dentro del contenedor a la izquierda */
+}
+    
+.skin-type-selector{
+    font-size: 25px;
+    font-family: "PT Serif", serif;
 }
 /* Estilo del menú desplegable */
 nav {
@@ -55,12 +61,13 @@ nav {
     padding: 20px;
     border-radius: 5px;
     animation: fadeIn 0.3s ease;
+    text-align: left;
 }
 nav ul{
     list-style-type: none;
     padding: 0; 
     margin: 0; 
-    text-align: center; 
+    text-align: left;  
 }
 /* Animación para el menú */
 @keyframes fadeIn {
@@ -78,6 +85,7 @@ body {
     display: flex;
     flex-direction: column;
     min-height: 100vh;
+    max-width: 100%;
 }
 /* contenedor colorido (main page) */
 .container {
@@ -101,9 +109,8 @@ main {
 /* Contenedor para la segunda parte dek index (lo blanco) */
 .whole_info {
     background-color: rgb(255, 250, 250);
-    width: 100vw; /* Asegurarse de cubrir el ancho total de la ventana */
+    width: 100%; /* Asegurarse de cubrir el ancho total de la ventana */
     min-height: 100vh;
-    padding: 10px; /* Espaciado alrededor de los bordes */
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -111,8 +118,8 @@ main {
  /* Contenedor de datos con diseño flexible y borde */
  .data {
     display: flex;
-    justify-content: space-between;
-    align-items: center;
+    flex-direction: column;
+    justify-items: center;
     border: 2px solid #A7D8FF;
     border-radius: 15px;
     padding: 40px;
@@ -120,10 +127,27 @@ main {
     max-width: 800px;
     margin: 50px auto;
 }
+
+.data-set-items {
+    display: flex;
+    justify-content: space-evenly;
+    margin-top: 20px;
+}
+
 .data-item {
     text-align: center;
-    width: 30%;
     font-size: 20px;
+}
+
+.data-set-t-n-d {
+    display: flex;
+    justify-content: space-evenly;
+    margin-top: 25px;
+}
+.data-time-and-date {
+    text-align: center;
+    width: 30%;
+    font-size: 10px;
 }
  /* Funcion para seleccionar el tipo de piel*/
 .skin-type-selector {
